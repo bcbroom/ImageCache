@@ -16,15 +16,19 @@
 
 class ImageCache {
     
-    private let cache = NSCache<NSString, Image>()
+    private var imageTable = [String : Image]()
+    private var imageList = [Image]()
+    private let capacity: Int
     
-    init() {
+    init(capacity: Int) {
+        self.capacity = capacity
         print("Cache initialized")
     }
     
     func fetchImage(fromURL: String, completion: @escaping (_ image: Image?) -> ()) {
         
-        if let image = cache.object(forKey: fromURL as NSString) {
+        if let image = imageTable[fromURL] {
+            moveToFront(image)
             print("Cache hit for \(fromURL)")
             completion(image)
             return
@@ -33,8 +37,44 @@ class ImageCache {
         downloadImage(fromURL: fromURL, completion: completion)
     }
     
+    private func moveToFront(_ image: Image) {
+        if let index = imageList.index(of: image) {
+            imageList.remove(at: index)
+            imageList.insert(image, at: 0)
+        }
+    }
+    
+    private func add(url: String, image: Image) {
+        imageList.insert(image, at: 0)
+        imageTable[url] = image
+        
+        trimExcessEntries()
+    }
+    
+    private func trimExcessEntries() {
+        while imageList.count > capacity {
+            if let lastImage = imageList.last,
+                let index = imageList.index(of: lastImage) {
+                imageList.remove(at: index)
+                
+                var lastImageKey: String? = nil
+                for key in imageTable.keys {
+                    if imageTable[key] == lastImage {
+                        lastImageKey = key
+                        break
+                    }
+                }
+                
+                if let lastImageKey = lastImageKey {
+                    imageTable.removeValue(forKey: lastImageKey)
+                }
+            }
+        }
+    }
+    
     func clearAll() {
-        cache.removeAllObjects()
+        imageTable.removeAll()
+        imageList.removeAll()
     }
     
     private func downloadImage(fromURL: String, completion: @escaping (_ image: Image?) -> ()) {
@@ -51,7 +91,7 @@ class ImageCache {
             
             if let data = data,
                 let image = Image(data: data) {
-                self.cache.setObject(image, forKey: fromURL as NSString)
+                self.add(url: fromURL, image: image)
                 DispatchQueue.main.async {
                     completion(image)
                 }
