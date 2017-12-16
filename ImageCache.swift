@@ -17,7 +17,6 @@
 class ImageCache {
     
     private let cache = NSCache<NSString, Image>()
-    private var maxCount = 5
     
     init() {
         print("Cache initialized")

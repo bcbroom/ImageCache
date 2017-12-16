@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageCachePlaying" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageCache_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,29 +25,39 @@
                                     <constraint firstAttribute="height" constant="230" id="OfF-ra-7PJ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4E-9Y-NIM">
-                                <rect key="frame" x="148" y="323" width="78" height="30"/>
-                                <state key="normal" title="Next Image"/>
-                                <connections>
-                                    <action selector="nextImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Bb-L3-vUY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbn-qY-dgg">
-                                <rect key="frame" x="145" y="377" width="84" height="30"/>
-                                <state key="normal" title="Clear Cache"/>
-                                <connections>
-                                    <action selector="clearCacheButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G1p-XC-iR9"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vHb-AY-zid">
+                                <rect key="frame" x="145.5" y="323" width="84" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4E-9Y-NIM">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                                        <state key="normal" title="Next Image"/>
+                                        <connections>
+                                            <action selector="nextImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Bb-L3-vUY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvV-q7-wOV">
+                                        <rect key="frame" x="0.0" y="30" width="84" height="30"/>
+                                        <state key="normal" title="Prev Image"/>
+                                        <connections>
+                                            <action selector="prevImageButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="byT-kr-vta"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbn-qY-dgg">
+                                        <rect key="frame" x="0.0" y="60" width="84" height="30"/>
+                                        <state key="normal" title="Clear Cache"/>
+                                        <connections>
+                                            <action selector="clearCacheButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G1p-XC-iR9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lbn-qY-dgg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Cq-fW-Lnq"/>
-                            <constraint firstItem="lbn-qY-dgg" firstAttribute="top" secondItem="g4E-9Y-NIM" secondAttribute="bottom" constant="24" id="5Ue-hm-eWc"/>
+                            <constraint firstItem="vHb-AY-zid" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3HU-py-Akv"/>
                             <constraint firstItem="qJW-VF-lJa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Hl3-En-Zde"/>
                             <constraint firstItem="qJW-VF-lJa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZRB-TP-VA8"/>
-                            <constraint firstItem="g4E-9Y-NIM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dxH-gE-3pH"/>
-                            <constraint firstItem="g4E-9Y-NIM" firstAttribute="top" secondItem="qJW-VF-lJa" secondAttribute="bottom" constant="48" id="nnX-Fu-fyI"/>
+                            <constraint firstItem="vHb-AY-zid" firstAttribute="top" secondItem="qJW-VF-lJa" secondAttribute="bottom" constant="48" id="sfg-i5-S9Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

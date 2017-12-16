@@ -729,7 +729,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1h2-gq-jUG">
-                                <rect key="frame" x="336" y="148" width="83" height="19"/>
+                                <rect key="frame" x="336" y="128" width="83" height="19"/>
                                 <buttonCell key="cell" type="roundRect" title="Clear Cache" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="StL-R6-8vV">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="cellTitle"/>
@@ -738,15 +738,28 @@
                                     <action selector="clearCacheButtonPressed" target="XfG-lQ-9wD" id="s0E-hY-Ezt"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hQb-Fs-qBi">
+                                <rect key="frame" x="336" y="156" width="83" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Prev Image" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Ks-Ci-jYP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="cellTitle"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="prevImageButtonTapped:" target="XfG-lQ-9wD" id="Eji-t4-qyQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="1h2-gq-jUG" firstAttribute="leading" secondItem="Vif-nD-oH1" secondAttribute="trailing" constant="86" id="0ym-OL-jgd"/>
                             <constraint firstAttribute="trailing" secondItem="UwF-y3-cey" secondAttribute="trailing" constant="64" id="AYY-fd-0MJ"/>
                             <constraint firstItem="UwF-y3-cey" firstAttribute="leading" secondItem="Vif-nD-oH1" secondAttribute="trailing" constant="86" id="BdN-mo-Ol0"/>
+                            <constraint firstItem="hQb-Fs-qBi" firstAttribute="leading" secondItem="Vif-nD-oH1" secondAttribute="trailing" constant="86" id="Pu3-5q-nG3"/>
                             <constraint firstAttribute="trailing" secondItem="1h2-gq-jUG" secondAttribute="trailing" constant="64" id="S3W-Nd-Ccb"/>
                             <constraint firstItem="Vif-nD-oH1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ZX1-ap-qwO"/>
+                            <constraint firstAttribute="trailing" secondItem="hQb-Fs-qBi" secondAttribute="trailing" constant="64" id="aSd-s5-Ul5"/>
+                            <constraint firstItem="1h2-gq-jUG" firstAttribute="top" secondItem="hQb-Fs-qBi" secondAttribute="bottom" constant="10" id="fri-AL-4BR"/>
                             <constraint firstItem="Vif-nD-oH1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="lV0-v0-rHt"/>
-                            <constraint firstItem="1h2-gq-jUG" firstAttribute="top" secondItem="UwF-y3-cey" secondAttribute="bottom" constant="18" id="pNR-FM-3lD"/>
+                            <constraint firstItem="hQb-Fs-qBi" firstAttribute="top" secondItem="UwF-y3-cey" secondAttribute="bottom" constant="10" id="obt-Ph-KL7"/>
                             <constraint firstItem="UwF-y3-cey" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="67" id="shp-dY-26p"/>
                         </constraints>
                     </view>

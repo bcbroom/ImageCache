@@ -41,6 +41,14 @@ class ViewController: UIViewController {
         loadImage()
     }
     
+    @IBAction func prevImageButtonTapped(_ sender: Any) {
+        imageIndex -= 1
+        if imageIndex < 1 {
+            imageIndex = 4
+        }
+        loadImage()
+    }
+    
     @IBAction func clearCacheButtonTapped(_ sender: Any) {
         cache.clearAll()
     }

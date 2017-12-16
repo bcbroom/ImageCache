@@ -4,24 +4,29 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ImageCacheMac.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
 		<key>ImageCachePlaying.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>ImageCacheSample.xcscheme</key>
+		<key>ImageCache_iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ImageCache_macOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>D3C7F2201FE4C5FC0079BF7E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D3C7F2391FE4C6250079BF7E</key>
 		<dict>
 			<key>primary</key>
