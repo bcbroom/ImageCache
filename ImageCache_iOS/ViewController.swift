@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
     var imageIndex = 1
-    let cache = ImageCache()
+    let cache = ImageCache(capacity: 3)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        cache.clearAll()
     }
 
     @IBAction func nextImageButtonTapped(_ sender: Any) {

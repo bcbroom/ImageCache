@@ -52,24 +52,15 @@ class ImageCache {
     }
     
     private func trimExcessEntries() {
-        while imageList.count > capacity {
-            if let lastImage = imageList.last,
-                let index = imageList.index(of: lastImage) {
-                imageList.remove(at: index)
-                
-                var lastImageKey: String? = nil
-                for key in imageTable.keys {
-                    if imageTable[key] == lastImage {
-                        lastImageKey = key
-                        break
-                    }
-                }
-                
-                if let lastImageKey = lastImageKey {
-                    imageTable.removeValue(forKey: lastImageKey)
-                }
-            }
+        guard imageList.count > capacity else {
+            return
         }
+        
+        imageList.removeSubrange(capacity ..< imageList.count)
+        
+        imageTable
+            .filter { !imageList.contains($0.value) }
+            .forEach { imageTable.removeValue(forKey: $0.key) }
     }
     
     func clearAll() {

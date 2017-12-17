@@ -12,7 +12,7 @@ class ViewController: NSViewController {
 
     @IBOutlet var imageView: NSImageView!
     var imageIndex = 1
-    let cache = ImageCache()
+    let cache = ImageCache(capacity: 3)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +51,7 @@ class ViewController: NSViewController {
         loadImage()
     }
     
-    
     @IBAction func clearCacheButtonPressed(_ sender: Any) {
         cache.clearAll()
     }
-
-
 }
-
