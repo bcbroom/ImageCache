@@ -19,6 +19,7 @@
 		D3C7F24B1FE58D4D0079BF7E /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7F24A1FE58D4D0079BF7E /* ImageCache.swift */; };
 		D3C7F24C1FE58E380079BF7E /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7F24A1FE58D4D0079BF7E /* ImageCache.swift */; };
 		D3C7F24E1FE58F350079BF7E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3C7F24D1FE58F350079BF7E /* Default-568h@2x.png */; };
+		D3C7F2511FE607350079BF7E /* README in Resources */ = {isa = PBXBuildFile; fileRef = D3C7F2501FE607350079BF7E /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D3C7F24A1FE58D4D0079BF7E /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		D3C7F24D1FE58F350079BF7E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D3C7F24F1FE590960079BF7E /* ImageCache_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImageCache_macOS.entitlements; sourceTree = "<group>"; };
+		D3C7F2501FE607350079BF7E /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		D3C7F2181FE4C5FC0079BF7E = {
 			isa = PBXGroup;
 			children = (
+				D3C7F2501FE607350079BF7E /* README */,
 				D3C7F24A1FE58D4D0079BF7E /* ImageCache.swift */,
 				D3C7F2231FE4C5FC0079BF7E /* ImageCache_iOS */,
 				D3C7F23B1FE4C6250079BF7E /* ImageCache_macOS */,
@@ -190,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C7F2511FE607350079BF7E /* README in Resources */,
 				D3C7F22F1FE4C5FC0079BF7E /* LaunchScreen.storyboard in Resources */,
 				D3C7F24E1FE58F350079BF7E /* Default-568h@2x.png in Resources */,
 				D3C7F22C1FE4C5FC0079BF7E /* Assets.xcassets in Resources */,
