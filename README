@@ -1,0 +1,7 @@
+The sample project includes an iOS and a macOS target. The ImageCache class should work the same in both.
+
+I started by implementing the cache with just a pure NSCache, as a simple place to start. This is tagged as "NSCache" in the repo. Since this was just a intermediate point, I didn't implement the cost parts of NSCache.
+
+It seemed that a Least Recently Used cache was the best option for the most common TableView usage, since the cells on the screen are the most likely to be needed (scroll cell off screen, then go back).
+
+The UI elements of the example apps grab images from http://lorempixel.com. The app has next and previous image buttons to cycle through a set of 4 images. The cache is set to store the last 3 images, to demonstrate how the removal is working. There is also a button to clear all items from the cache, for verificaiton. ImageCache will log whether the image is downloaded fresh, or returned as a cache hit.
